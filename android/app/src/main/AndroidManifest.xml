@@ -1,0 +1,112 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nonunbub.app">
+    <queries>
+        <!-- 네이버 -->
+        <package android:name="com.nhn.android.search"/>
+
+        <!-- 보안-->
+        <package android:name="com.ahnlab.v3mobileplus"/>
+        <package android:name="com.TouchEn.mVaccine.webs"/>
+
+        <!-- 우리카드-->
+        <package android:name="com.wooricard.wpay"/>
+        <package android:name="com.wooricard.smartapp"/>
+        <package android:name="com.wooribank.smart.npib"/>
+        <package android:name="com.mysmilepay.app"/>
+
+        <!-- 씨티카드-->
+        <package android:name="kr.co.citibank.citimobile"/>
+        <package android:name="com.citibank.cardapp"/>
+
+        <!-- 신한카드-->
+        <package android:name="com.shcard.smartpay"/>
+        <package android:name="com.shinhancard.smartshinhan"/>
+
+        <!-- ISP-->
+        <package android:name="kvp.jjy.MispAndroid320"/>
+
+        <!-- KB-->
+        <package android:name="com.kbcard.cxh.appcard"/>
+
+        <!-- 현대카드-->
+        <package android:name="com.hyundaicard.appcard"/>
+        <package android:name="com.samsung.android.spaylite"/>
+        <package android:name="com.ssg.serviceapp.android.egiftcertificate"/>
+
+        <!-- 삼성카드-->
+        <package android:name="kr.co.samsungcard.mpocket"/>
+        <package android:name="com.nhnent.payapp"/>
+
+        <!-- 하나카드-->
+        <package android:name="com.hanaskcard.paycla"/>
+        <package android:name="kr.co.hanamembers.hmscustomer"/>
+        <package android:name="com.kakao.talk"/>
+
+        <!-- 롯데카드-->
+        <package android:name="com.lcacApp"/>
+        <package android:name="com.lotte.lpay"/>
+        <package android:name="com.lottemembers.android"/>
+
+        <!-- 농협카드-->
+        <package android:name="nh.smart.nhallonepay"/>
+
+        <package android:name="com.samsung.android.spay"/>
+        <package android:name="net.nshc.droidx3web"/>
+        <package android:name="kr.shiftworks.vguardweb"/>
+        <package android:name="com.payprotocol.walletkr"/>
+        <package android:name="kr.danal.app.damoum"/>
+        <package android:name="com.kt.ktauth"/>
+        <package android:name="uplus.membership"/>
+        <package android:name="com.bankpay.android"/>
+        <package android:name="com.kbstar.liivbank"/>
+        <package android:name="com.nh.cashcardapp"/>
+        <package android:name="kr.co.kfcc.mobilebank"/>
+        <package android:name="com.knb.psb"/>
+        <package android:name="com.kftc.bankpay.android"/>
+        <package android:name="kr.co.shiftworks.vguardweb"/>
+        <package android:name="com.kbankwith.smartbank"/>
+        <package android:name="viva.republica.toss"/>
+        <package android:name="com.lge.lgpay"/>
+    </queries>
+    <!-- 인터넷 권한 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 카메라 권한 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <!-- 5.0 버전 파일업로드 권한 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="18"/>
+    <!-- 외부 저장소 사용 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application
+        android:label="노는법"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI. -->
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+</manifest>
