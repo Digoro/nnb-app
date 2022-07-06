@@ -4,6 +4,9 @@
         <!-- 네이버 -->
         <package android:name="com.nhn.android.search"/>
 
+        <!-- 카카오페이 -->
+        <package android:name="com.kakaopay.app"/>
+
         <!-- 보안-->
         <package android:name="com.ahnlab.v3mobileplus"/>
         <package android:name="com.TouchEn.mVaccine.webs"/>
@@ -41,6 +44,12 @@
         <package android:name="com.hanaskcard.paycla"/>
         <package android:name="kr.co.hanamembers.hmscustomer"/>
         <package android:name="com.kakao.talk"/>
+        <package android:name="com.hanaskcard.rocomo.potal"/>
+        <package android:name="com.ahnlab.v3mobileplus"/>
+        <package android:name="com.lge.lgpay"/>
+        <package android:name="viva.republica.toss"/>
+        <package android:name="com.samsung.android.spay"/>
+        <package android:name="com.nhnent.payapp"/>
 
         <!-- 롯데카드-->
         <package android:name="com.lcacApp"/>
@@ -67,6 +76,10 @@
         <package android:name="com.kbankwith.smartbank"/>
         <package android:name="viva.republica.toss"/>
         <package android:name="com.lge.lgpay"/>
+
+        <!-- 국민카드-->
+        <package android:name="com.kbstar.reboot"/>
+        <package android:name="com.kbstar.kbbank "/>
     </queries>
     <!-- 인터넷 권한 -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -108,5 +121,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="high_importance_channel" />
     </application>
 </manifest>
