@@ -32,7 +32,7 @@ initializeFcm() async {
     provisional: false,
     sound: true,
   );
-  var channel = const AndroidNotificationChannel(
+  var channel = AndroidNotificationChannel(
     'high_importance_channel',
     'High Importance Notifications',
     description: 'This channel is used for important notifications.',
@@ -43,10 +43,10 @@ initializeFcm() async {
       .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
       ?.createNotificationChannel(channel);
   FirebaseMessaging.instance.onTokenRefresh.listen((newToken) async {
-    print(newToken);
+    print('@@@@@ onTokenRefresh: $newToken');
   });
-  FirebaseMessaging.instance.getToken().then((value) {
-    print(value);
+  FirebaseMessaging.instance.getToken().then((token) {
+    print('@@@@@ getToken: $token');
   });
   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
     if (message.notification != null) {
@@ -63,7 +63,7 @@ initializeFcm() async {
           ),
           iOS: IOSNotificationDetails(
             badgeNumber: 1,
-            subtitle: 'the subtitle',
+            // subtitle: 'the subtitle',
             sound: 'slow_spring_board.aiff',
           ),
         ),
@@ -80,9 +80,17 @@ class MyApp extends StatefulWidget {
   GlobalKey webViewKey = GlobalKey();
   Completer<InAppWebViewController> webViewController = Completer<InAppWebViewController>();
   InAppWebViewGroupOptions options = InAppWebViewGroupOptions(
-    crossPlatform: InAppWebViewOptions(useShouldOverrideUrlLoading: true, mediaPlaybackRequiresUserGesture: false),
-    android: AndroidInAppWebViewOptions(useHybridComposition: true),
-    ios: IOSInAppWebViewOptions(allowsInlineMediaPlayback: true),
+    crossPlatform: InAppWebViewOptions(
+      useShouldOverrideUrlLoading: true,
+      mediaPlaybackRequiresUserGesture: false,
+    ),
+    android: AndroidInAppWebViewOptions(
+      useHybridComposition: true,
+      mixedContentMode: AndroidMixedContentMode.MIXED_CONTENT_ALWAYS_ALLOW,
+    ),
+    ios: IOSInAppWebViewOptions(
+      allowsInlineMediaPlayback: true,
+    ),
   );
 
   MyApp({Key? key, required this.flutterLocalNotificationsPlugin}) : super(key: key);
